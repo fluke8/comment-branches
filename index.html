@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 992px) {
+            .comments-block {
+                width: auto !important;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #ffa;
+        }
+
+        .block {
+            width: 100%;
+            background-color: #0ff;
+
+        }
+
+        .w {
+            display: flex;
+            flex-direction: column;
+            padding-left: 18px;
+            margin-left: 10px;
+            border-left: 1px solid;
+            position: relative;
+
+        }
+
+        .comments-block {
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .buttonToHide {
+
+            height: 100%;
+            width: 28px;
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0.5);
+            left: -12px;
+            cursor: pointer;
+            z-index: 9;
+        }
+
+        .buttonToDisplay {
+            width: 100%;
+            background-color: rgba(0, 255, 0, 0.5);
+            cursor: pointer;
+            z-index: 9;
+            padding: 5px;
+        }
+
+        .buttonToDisplay::before {
+            content: "+";
+            height: 22px;
+            width: 8px;
+            border: solid 2px;
+            border-radius: 20%;
+            width: 12px;
+            height: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: 1.2em sans-serif;
+            position: relative;
+            float: left;
+            margin-right: 5px;
+        }
+
+
+        .w::before {
+            content: "-";
+            height: 22px;
+            width: 8px;
+            position: absolute;
+            left: -4px;
+            top: 0;
+            background-color: white;
+            border: solid 2px;
+            border-radius: 20%;
+            width: 12px;
+            height: 12px;
+            left: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: 1.2em sans-serif;
+        }
+
+        .dn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comments-block">
+        <div class="block">
+            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+        </div>
+        <div class="buttonToDisplay" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+
+        <div class="w dn">
+            <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+            <div class="w">
+                <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+            <div class="w">
+                <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                <div class="w">
+                    <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                    <div class="w">
+                        <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="buttonToDisplay" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+
+            <div class="w dn">
+                <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                <div class="w">
+                    <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                <div class="w">
+                    <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                    <div class="w">
+                        <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                        <div class="w">
+                            <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                            <div class="block">
+                                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                    voluptate
+                                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                    voluptate
+                                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                    voluptate
+                                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.
+                                </p>
+                            </div>
+                            <div class="block">
+                                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                    voluptate
+                                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="block">
+            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+        </div>
+        <div class="buttonToDisplay" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+
+        <div class="w dn">
+            <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+            <div class="w">
+                <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+            <div class="w">
+                <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                <div class="w">
+                    <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                    <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)">Раскрыть ветку</div>
+                    <div class="w">
+                        <div class="buttonToHide" onclick="hidecommentbranch(this)"></div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                            adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                            autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+            <div class="block">
+                <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                    adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                    autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+            </div>
+    </div>
+
+
+    <script>
+        function hidecommentbranch(element) {
+            let w = element.closest('.w');
+            w.classList.add('dn');
+            w.previousElementSibling.classList.remove('dn');
+        }
+        function displaycommentbranch(element) {
+            let w = element.nextElementSibling;
+            w.classList.remove('dn');
+            element.classList.add('dn');
+        }
+    </script>
+
+</body>
+
+</html>
