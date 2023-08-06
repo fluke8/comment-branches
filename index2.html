@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 992px) {
+            .comments-block {
+                width: auto !important;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        html{
+            overflow:  hidden;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #ffa;
+        }
+
+        .block {
+            width: 100%;
+            background-color: #0ff;
+
+        }
+
+        .w {
+            display: flex;
+            position: relative;
+
+        }
+
+        .comments-block {
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .buttonToHide {
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.5);
+            cursor: pointer;
+            z-index: 9;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .buttonToHide::after {
+            content: "";
+            width: 0.5px;
+            height: 100%;
+            background-color: #000;
+            position: relative;
+
+        }
+
+        .square {
+            width: 10px;
+            height: 10px;
+            border: 1px solid;
+            border-radius: 20%;
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .buttonToDisplay {
+            width: 100%;
+            background-color: rgba(0, 255, 0, 0.5);
+            cursor: pointer;
+            z-index: 9;
+            padding: 5px;
+            display: flex;
+
+        }
+
+        .dn {
+            display: none;
+        }
+
+        .r {
+            flex-direction: row !important;
+        }
+
+        .c {
+            flex-direction: column !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comments-block">
+        <div class="block">
+            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+        </div>
+        <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)"><div class="square">+</div>Раскрыть ветку</div>
+
+        <div class="w r">
+            <div class="buttonToHide" onclick="hidecommentbranch(this)">
+                <div class="square">-</div>
+            </div>
+            <div class="w c">
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+                <div class="buttonToDisplay dn" onclick="displaycommentbranch(this)"><div class="square">+</div>Раскрыть ветку</div>
+                <div class="w r">
+                    <div class="buttonToHide" onclick="hidecommentbranch(this)">
+                        <div class="square">-</div>
+                    </div>
+                    <div class="w c">
+                        <div class="block">
+                            <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit
+                                voluptate
+                                autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>gsdfgsdfg Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                        adipisci deserunt, dolores blanditiis praesentium asperiores quidem? Debitis sit voluptate
+                        autem deserunt? Debitis deserunt ipsa nobis nisi doloribus unde! Explicabo, nisi.</p>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        function hidecommentbranch(element) {
+            let w = element.closest('.w');
+            w.classList.add('dn');
+            w.previousElementSibling.classList.remove('dn');
+        }
+        function displaycommentbranch(element) {
+            let w = element.nextElementSibling;
+            w.classList.remove('dn');
+            element.classList.add('dn');
+        }
+    </script>
+
+</body>
+
+</html>
