@@ -57,9 +57,10 @@
             cursor: pointer;
             z-index: 9;
             display: flex;
-            justify-content: center;
+            justify-content: start;
             flex-direction: column;
             align-items: center;
+            padding-right: 10px;
 
         }
 
@@ -67,9 +68,10 @@
             content: "";
             width: 0.5px;
             height: 100%;
+            top: 5px;
             background-color: #000;
-            position: relative;
-
+            position: absolute;
+            
         }
 
         .square {
@@ -81,7 +83,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 5px;
+            margin: 5px 0;
+            background-color: #fff;
+            z-index: 9;
         }
 
         .buttonToDisplay {
