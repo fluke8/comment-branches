@@ -100,6 +100,22 @@
         .buttonToDisplay > .square{
             margin-right: 5px;
         }
+        
+        .buttonToHide:hover .square, .buttonToDisplay:hover .square{
+            transition: ease 0.2s;
+            border: green solid 1px;
+            color: green;
+        } 
+
+        .buttonToDisplay:hover{
+            transition: ease 0.2s;
+            color: green;
+        }
+
+        .buttonToHide:hover::after{
+            transition: ease 0.5s;
+            background-color: green;
+        }
 
         .dn {
             display: none;
